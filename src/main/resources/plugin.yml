@@ -1,0 +1,23 @@
+name: WrapperHook
+author: bmlzootown
+version: 0.0.1
+main: ml.bmlzootown.WrapperHook
+description: Plugin to interact with Feather wrapper
+
+commands:
+  wrapper:
+    description: Interact with the wrapper
+    permission: wrapper.basic
+    permission-message: You don't have permission to use that command
+    aliases: [wr, wrap]
+
+permissions:
+  wrapper.basic:
+    description: Gives users basic commands
+    default: true
+  wrapper.mod:
+    description: Gives access to mod commands
+    default: false
+  wrapper.admin:
+    description: Gives access to admin commands
+    default: false
