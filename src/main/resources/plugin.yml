@@ -3,6 +3,7 @@ author: bmlzootown
 version: 0.0.1
 main: ml.bmlzootown.WrapperHook
 description: Plugin to interact with Feather wrapper
+api-version: 1.13
 
 commands:
   wrapper:

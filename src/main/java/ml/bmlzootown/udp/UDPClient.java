@@ -9,17 +9,15 @@ public class UDPClient {
         try {
             DatagramSocket client = new DatagramSocket();
             InetAddress ip = InetAddress.getByName("localhost");
-            byte[] sendData = new byte[1024];
+            byte[] sendData = request.getBytes();
             byte[] receiveData = new byte[1024];
-            sendData = request.getBytes();
 
             DatagramPacket send = new DatagramPacket(sendData, sendData.length, ip, 25569);
             client.send(send);
 
             DatagramPacket receive = new DatagramPacket(receiveData, receiveData.length);
             client.receive(receive);
-            String reply = new String(receive.getData(), 0, receive.getLength());
-            return reply;
+            return new String(receive.getData(), 0, receive.getLength());
         } catch (Exception e) {
             e.printStackTrace();
             return "[ERROR]: Whoops, something went wrong! Poke a staff member.";
@@ -30,8 +28,7 @@ public class UDPClient {
         try {
             DatagramSocket client = new DatagramSocket();
             InetAddress ip = InetAddress.getByName("localhost");
-            byte[] sendData = new byte[1024];
-            sendData = request.getBytes();
+            byte[] sendData = request.getBytes();
 
             DatagramPacket send = new DatagramPacket(sendData, sendData.length, ip, 25569);
             client.send(send);
